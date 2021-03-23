@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="static/vue.min.js"></script>
+    <script src="static/axios.min.js"></script>
+</head>
+
+<body>
+
+<div id="ad">
+        <div v-for="user in userList">
+            {{user.username}}-------->{{user.age}}
+        </div>
+</div>
+
+<script>
+    new Vue({
+        el:"#ad",
+        data:{
+            num: 8,
+            userList:[]
+
+        },
+        methods:{
+           init:function () {
+                 axios.get('./data/user.json').then((resp) => {
+                    this.userList=resp.data;
+                 }).catch().finally()
+           }
+        },
+        created:function () {
+           this.init();
+        }
+    });
+</script>
+</body>
+</html>

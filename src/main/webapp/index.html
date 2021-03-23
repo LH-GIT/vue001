@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script  type="text/javascript" src="static/vue.min.js"></script>
+</head>
+<body>
+  <!-- 1.使用vue的三步
+     第一步：引入vue.min.js
+     第二步：创建vue对象
+     第三步：指定vue控制的区域
+   -->
+<div id="area">
+    {{ message }}
+    <input type="text" v-model="message">
+</div>
+
+<script>
+  var vm=  new Vue({
+        el:"#area",
+        data:{
+            message: 1000
+        }
+    });
+  vm.message=100
+</script>
+
+
+</body>
+</html>

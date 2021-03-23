@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script  type="text/javascript" src="static/vue.min.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+        .big {
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="area">
+    <div>您好啊</div>
+    <div class="red big">您好啊</div>
+    <div v-bind:class="{red:isRed,big:isBig}">sd </div>
+    <div v-bind:class="['red',big]">sd </div>
+
+    <div v-bind:class="[isRed ? 'red':'','big']">sd </div>
+    <a :href="da">ds </a>
+</div>
+
+<!--
+   v-on:事件名=函数
+ -->
+<script>
+  var vm=  new Vue({
+        el:"#area",
+        data:{
+            isRed:false,
+            isBig:false,
+            big:"big",
+            da:"http://atguigu.com"
+        },
+      methods:{
+        down:function () {
+            alert(32);
+        }
+      }
+    });
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="static/vue.min.js"></script>
+
+</head>
+
+<body>
+   <div id="ad">
+     n1: <input type="text" v-model="n1">
+       <select v-model="sel">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+       </select>
+      n2: <input type="text"  v-model="n2">
+       <input type="button" value="=" @click="calculate()">
+       result: <input type="text" v-model="result">
+   </div>
+
+<script>
+    new Vue({
+        el:"#ad",
+        data:{
+            n1:"",
+            sel:"+",
+            n2:"",
+            result:""
+        },
+        methods:{
+            calculate:function () {
+               this.result=eval(this.n1+this.sel+this.n2);
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="static/vue.min.js"></script>
+</head>
+
+<body>
+
+<div id="ad">
+    <p>
+        <div v-if="num > 10">这是大于10的数字</div>
+        <div v-else-if="num > 9">这是大于9的数字</div>
+        <div v-else-if="num > 8">这是大于8的数字</div>
+        <div v-else-if="num > 7">这是大于7的数字</div>
+       <div v-else="num > 6">这是大于6的数字</div>
+    </p>
+</div>
+
+<script>
+    new Vue({
+        el:"#ad",
+        data:{
+            num: 8,
+
+        },
+        methods:{
+
+        }
+    });
+</script>
+</body>
+</html>

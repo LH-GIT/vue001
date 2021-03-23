@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script  type="text/javascript" src="static/vue.min.js"></script>
+
+</head>
+<body>
+<div id="area">
+      <input type="text" @keydown.enter="down()">
+</div>
+
+<!--
+   v-on:事件名=函数
+ -->
+<script>
+  var vm=  new Vue({
+        el:"#area",
+        data:{
+            message: "千万别浪，小心摔疼你哦",
+            intervalId:null
+        },
+      methods:{
+        down:function () {
+            alert(32);
+        }
+      }
+    });
+
+</script>
+
+
+</body>
+</html>

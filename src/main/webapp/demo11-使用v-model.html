@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="static/vue.min.js"></script>
+
+</head>
+
+<body>
+   <div id="ad">
+       <p>
+           {{username}}
+           <input type="text" v-model="username">
+       </p>
+       <p>
+           {{password}}
+           <input type="text" v-model="password">
+       </p>
+       <p>
+           hobby: {{city}}
+           hobby:<select v-model="city">
+                   <option value="ds">ds</option>
+                   <option value="dsd">dsd</option>
+                   <option value="dsds">dsds</option>
+                   <option value="fd">fd</option>
+                 </select>
+       </p>
+       <p>
+           多选: {{hobby}}
+           hobby: <input type="checkbox" v-model="hobby" value="lq">lq
+           <input type="checkbox" v-model="hobby" value="ppq">ppq
+           <input type="checkbox" v-model="hobby" value="ymq">
+           <input type="checkbox" v-model="hobby" value="pq">
+       </select>
+       </p>
+       <p>
+           多选: {{gender}}
+           gender: <input type="radio" v-model="gender" value="male">male
+           <input type="radio" v-model="gender" value="female">female
+           </select>
+       </p>
+       <p>
+           多选: {{da}}
+           da: <textarea v-model="da"></textarea>
+       </p>
+   </div>
+
+<script>
+    new Vue({
+        el:"#ad",
+        data:{
+            username:"",
+            password:"",
+            city:"fd",
+            hobby:[],
+            gender:"male",
+            da:""
+        }
+    });
+</script>
+</body>
+</html>
